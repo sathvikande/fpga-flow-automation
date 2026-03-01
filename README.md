@@ -1,16 +1,13 @@
 FPGA Design Flow Automation using Python & TCL
-
-📌 Overview
+Overview
 
 This project demonstrates automation of the complete FPGA design flow in Vivado using Python and TCL scripting.
 
 Instead of manually running simulation, synthesis, and implementation through the GUI, this framework executes the entire flow in batch mode using a single Python script.
 
-🚀 Features
+The automation performs:
 
-Automated project creation
-
-Simulation execution
+Simulation
 
 Waveform generation
 
@@ -20,6 +17,26 @@ Place & Route
 
 Timing analysis
 
+Resource utilization extraction
+
+Worst Negative Slack (WNS) extraction
+
+Automatic waveform GUI launch
+
+Features
+
+Automated project creation
+
+Batch-mode execution of Vivado
+
+Functional simulation
+
+Waveform database generation (.wdb)
+
+Synthesis & Implementation
+
+Timing report generation
+
 Automatic extraction of:
 
 Slice LUTs
@@ -28,9 +45,9 @@ Slice Registers
 
 Worst Negative Slack (WNS)
 
-Automatic waveform GUI launch
+Clean console summary output
 
-🛠 Tools Used
+Tools Used
 
 Vivado 2018.3
 
@@ -40,69 +57,106 @@ TCL scripting
 
 XSIM simulator
 
-🔁 Flow Architecture
-Python Script
-     ↓
+Flow Architecture
+
+Python Script (full_flow.py)
+↓
 Vivado Batch Mode
-     ↓
+↓
 Simulation
-     ↓
+↓
 Synthesis
-     ↓
-Implementation
-     ↓
+↓
+Implementation (Place & Route)
+↓
 Timing Report Generation
-     ↓
+↓
 Report Parsing (Python)
-📊 Sample Output
+↓
+Waveform GUI Launch
+
+Project Structure
+
+fpga-flow-automation/
+│
+├── flow.tcl
+├── full_flow.py
+├── top.v
+├── tb.v
+├── README.md
+└── screenshots/
+├── waveform.png
+└── summary_output.png
+
+Sample Console Output
+
 Flow completed successfully
 Slice Registers Used: 4
 Worst Negative Slack (WNS): 1.0 ns
 Timing Status: PASS
-📷 Waveform Output
 
-Counter simulation waveform:
+Waveform Output
 
-(Insert waveform screenshot here)
+The waveform shows:
 
-📂 File Description
+Clock toggling correctly
 
-full_flow.py → Python automation script
+Reset behavior
 
-flow.tcl → TCL script controlling Vivado
+4-bit counter incrementing sequentially
 
-top.v → RTL design (4-bit counter)
+Key Learning Outcomes
 
-tb.v → Testbench
+Understanding of Vivado batch mode execution
 
-🎯 Learning Outcomes
+TCL scripting for EDA tool control
 
-Understanding of batch-mode FPGA flows
+Static Timing Analysis (STA)
 
-Static Timing Analysis (WNS extraction)
+Slack & Worst Negative Slack (WNS) concepts
 
-Report parsing automation
+Automated report parsing
 
-Difference between GUI and scripted flows
+Difference between GUI-driven and scripted design flows
 
-Flow debugging and tool control
+Debugging and flow engineering mindset
 
-▶ How to Run
+How to Run
 
-Install Vivado
+Install Vivado (update the Vivado path inside full_flow.py)
 
-Update Vivado path in full_flow.py
+Make sure Python 3.x is installed
 
 Run:
 
 python full_flow.py
 
-📌 Future Improvements
+The script will:
 
-Multi-design regression support
+Run simulation
 
-Automatic pass/fail detection
+Generate waveform
 
-Timing constraint sweep
+Perform synthesis and implementation
+
+Extract timing and utilization metrics
+
+Open waveform viewer automatically
+
+Future Improvements
+
+Multi-design regression testing
+
+Automatic pass/fail timing detection
+
+Timing constraint sweep automation
 
 CSV report generation
+
+Continuous Integration (CI) support
+
+Author
+
+Built as a learning project to explore FPGA flow automation and EDA scripting concepts.
+
+You can paste this directly — no edits needed.
