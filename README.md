@@ -1,4 +1,5 @@
 FPGA Design Flow Automation using Python & TCL
+
 📌 Overview
 
 This project demonstrates automation of the complete FPGA design flow in Vivado using Python and TCL scripting.
@@ -95,6 +96,7 @@ Update Vivado path in full_flow.py
 Run:
 
 python full_flow.py
+
 📌 Future Improvements
 
 Multi-design regression support
