@@ -13,10 +13,7 @@ update_compile_order -fileset sim_1
 # Simulation
 # -----------------
 launch_simulation
-
-add_wave -recursive *
 run 200ns
-
 close_sim
 
 # -----------------
